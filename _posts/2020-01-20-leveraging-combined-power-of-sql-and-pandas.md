@@ -7,12 +7,8 @@ categories:
   - SQL
   - Python
 ---
-===========================================
-
-
-*An illustration of using SQLite and Pandas to extract information from data*
-
 ![](https://miro.medium.com/max/1710/1\*LZ4\_i8qifjfM4UsgjslBQw.png)
+*An illustration of using SQLite and Pandas to extract information from data*
 
 *Complementing pandas with sqlite3 would extend more tools for data wrangling*
 
