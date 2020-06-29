@@ -1,13 +1,13 @@
-Interest Rates Forecasting— using Stochastic Differential Equations
-===================================================================
-
-[![Kshitij Mamgain](https://miro.medium.com/fit/c/96/96/2*MnbMNInJ86IVgP-DD_CZ2g.jpeg)](https://medium.com/@kshitij.mamgain?source=post_page-----7d5d91e5d65c----------------------)[Kshitij Mamgain](https://medium.com/@kshitij.mamgain?source=post_page-----7d5d91e5d65c----------------------)Follow[Dec 21, 2019](https://medium.com/@kshitij.mamgain/interest-rates-forecasting-using-stochastic-differential-equations-7d5d91e5d65c?source=post_page-----7d5d91e5d65c----------------------) · 8 min read
-
-Introduction to Statistical Modeling Interest Rates in R
-
-<img class="s t u gv ai" src="https://miro.medium.com/max/12000/0\*cyY0izB1KbkQGfbe" width="6000" height="4000" srcSet="https://miro.medium.com/max/552/0\*cyY0izB1KbkQGfbe 276w, https://miro.medium.com/max/1104/0\*cyY0izB1KbkQGfbe 552w, https://miro.medium.com/max/1280/0\*cyY0izB1KbkQGfbe 640w, https://miro.medium.com/max/1400/0\*cyY0izB1KbkQGfbe 700w" sizes="700px" role="presentation"/>
-
-Photo by [M. B. M.](https://unsplash.com/@m_b_m?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)
+---
+published: true
+title: "Interest Rates Forecasting— using Stochastic Differential Equations"
+date: 2019-12-20
+categories:
+  - R
+  - statistics
+---
+![](https://miro.medium.com/max/700/0*cyY0izB1KbkQGfbe)
+*[(Source)](https://unsplash.com/photos/ZzOa5G8hSPI)*
 
 **Introduction**
 ----------------
@@ -54,7 +54,7 @@ plot(x=as.zoo(liborusd),col=tsRainbow, main="LIBOR Rates for USD 2014-12 to 2019
      ylab="Rates", xlab="Time", plot.type="single", yaxt="n")
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/2400/1\*wuAnvGgfWUdmcRc-wLS0Fg.gif" width="1200" height="800" srcSet="https://miro.medium.com/max/552/1\*wuAnvGgfWUdmcRc-wLS0Fg.gif 276w, https://miro.medium.com/max/1104/1\*wuAnvGgfWUdmcRc-wLS0Fg.gif 552w, https://miro.medium.com/max/1280/1\*wuAnvGgfWUdmcRc-wLS0Fg.gif 640w, https://miro.medium.com/max/1400/1\*wuAnvGgfWUdmcRc-wLS0Fg.gif 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/700/1*wuAnvGgfWUdmcRc-wLS0Fg.gif)
 
 Want to [learn](https://github.com/SiphuLangeni/Major-Crime-Indicators-in-Toronto/blob/master/MCI.md) about gganimate?
 
@@ -76,7 +76,7 @@ plot(diff(liborusd$USD\_12m, lag =1, differences = 1),
  main = “CAD 12 month tenor — 1 day increment”)
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1290/1\*d8xSe3mcluPBmf3CQV6bbQ.png" width="645" height="645" srcSet="https://miro.medium.com/max/552/1\*d8xSe3mcluPBmf3CQV6bbQ.png 276w, https://miro.medium.com/max/1104/1\*d8xSe3mcluPBmf3CQV6bbQ.png 552w, https://miro.medium.com/max/1280/1\*d8xSe3mcluPBmf3CQV6bbQ.png 640w, https://miro.medium.com/max/1290/1\*d8xSe3mcluPBmf3CQV6bbQ.png 645w" sizes="645px" role="presentation"/>
+![](https://miro.medium.com/max/645/1*d8xSe3mcluPBmf3CQV6bbQ.png)
 
 Stationarity in time series by 1-day differencing
 
@@ -103,7 +103,7 @@ qplot(x,value, data = molten\_acf, color = variable, size = I(3)) +
   ggtitle ("ADF test for stationarity")
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1250/1\*\_QMt6ogWLHOnlNhOwqMToQ.png" width="625" height="506" srcSet="https://miro.medium.com/max/552/1\*\_QMt6ogWLHOnlNhOwqMToQ.png 276w, https://miro.medium.com/max/1104/1\*\_QMt6ogWLHOnlNhOwqMToQ.png 552w, https://miro.medium.com/max/1250/1\*\_QMt6ogWLHOnlNhOwqMToQ.png 625w" sizes="625px" role="presentation"/>
+![](https://miro.medium.com/max/625/1*_QMt6ogWLHOnlNhOwqMToQ.png)
 
 ADF test for stationarity of time series
 
@@ -130,7 +130,7 @@ plot(diff(liborusd$USD\_12m, lag =1, differences = 1),
      main = "USD 12 month tenor - 1 day increment")
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1290/1\*DhbmIoHi45AF4A\_7DTFbpQ.png" width="645" height="645" srcSet="https://miro.medium.com/max/552/1\*DhbmIoHi45AF4A\_7DTFbpQ.png 276w, https://miro.medium.com/max/1104/1\*DhbmIoHi45AF4A\_7DTFbpQ.png 552w, https://miro.medium.com/max/1280/1\*DhbmIoHi45AF4A\_7DTFbpQ.png 640w, https://miro.medium.com/max/1290/1\*DhbmIoHi45AF4A\_7DTFbpQ.png 645w" sizes="645px" role="presentation"/>
+![](https://miro.medium.com/max/645/1*DhbmIoHi45AF4A_7DTFbpQ.png)
 
 Distribution of 1 day increment is similar to Gaussian distribution
 
@@ -149,7 +149,7 @@ cdfcomp(list(fn), legendtext = plot.legend)
 ppcomp(list(fn), legendtext = plot.legend)
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/2392/1\*VOV49Ofe2vrDr3IEhMN43Q.png" width="1196" height="519" srcSet="https://miro.medium.com/max/552/1\*VOV49Ofe2vrDr3IEhMN43Q.png 276w, https://miro.medium.com/max/1104/1\*VOV49Ofe2vrDr3IEhMN43Q.png 552w, https://miro.medium.com/max/1280/1\*VOV49Ofe2vrDr3IEhMN43Q.png 640w, https://miro.medium.com/max/1456/1\*VOV49Ofe2vrDr3IEhMN43Q.png 728w, https://miro.medium.com/max/1632/1\*VOV49Ofe2vrDr3IEhMN43Q.png 816w, https://miro.medium.com/max/1808/1\*VOV49Ofe2vrDr3IEhMN43Q.png 904w, https://miro.medium.com/max/1984/1\*VOV49Ofe2vrDr3IEhMN43Q.png 992w, https://miro.medium.com/max/2000/1\*VOV49Ofe2vrDr3IEhMN43Q.png 1000w" sizes="1000px" role="presentation"/>
+![](https://miro.medium.com/max/1000/1*VOV49Ofe2vrDr3IEhMN43Q.png)
 
 Cullen and Frey graph and fitting normal distribution
 
@@ -162,7 +162,7 @@ Now important part to understand here is that apart from getting pretty graphs w
 
 In the short rate modeling Vasicek model is a mathematical model which describes the evolution of interest rates. In its application in physical sciences it is also known as Ornstein-Uhlenbeck(OU) model. The model specifies that the instantaneous interest rate follows the stochastic differential equation:
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/928/1\*Rz3a7nX7IZ77ZBgrTv4a4w.png" width="464" height="114" srcSet="https://miro.medium.com/max/552/1\*Rz3a7nX7IZ77ZBgrTv4a4w.png 276w, https://miro.medium.com/max/928/1\*Rz3a7nX7IZ77ZBgrTv4a4w.png 464w" sizes="464px" role="presentation"/>
+![](https://miro.medium.com/max/464/1*Rz3a7nX7IZ77ZBgrTv4a4w.png)
 
 The above equation could help us solve the instantaneous volatility, speed of reversion and long-term mean level. The ‘sde’ package in R is a powerful package.
 
@@ -195,7 +195,7 @@ lines(ts(day1\_incu\[,1\]), col='red', type = "l")
 
 The above line of codes would help us solve the equation. The important thing to note about this powerful package is that we specify the theta values but the package adjust the values on its own to maximize the likelihood.
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1790/1\*fLrHwN1dCEZ4YnlaehAjiw.png" width="895" height="575" srcSet="https://miro.medium.com/max/552/1\*fLrHwN1dCEZ4YnlaehAjiw.png 276w, https://miro.medium.com/max/1104/1\*fLrHwN1dCEZ4YnlaehAjiw.png 552w, https://miro.medium.com/max/1280/1\*fLrHwN1dCEZ4YnlaehAjiw.png 640w, https://miro.medium.com/max/1400/1\*fLrHwN1dCEZ4YnlaehAjiw.png 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/700/1*fLrHwN1dCEZ4YnlaehAjiw.png)
 
 Vasicek Simulation for one of the interest rate tenor
 
