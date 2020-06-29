@@ -8,6 +8,7 @@ categories:
 ---
 ![](https://miro.medium.com/max/700/0*cyY0izB1KbkQGfbe)
 *[(Source)](https://unsplash.com/photos/ZzOa5G8hSPI)*
+*Introduction to Statistical Modeling Interest Rates in R*
 
 **Introduction**
 ----------------

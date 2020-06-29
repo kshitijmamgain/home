@@ -1,14 +1,19 @@
-Object-Oriented Programming to tune ML Model
-============================================
+---
+published: true
+title: "Object-Oriented Programming to tune ML Model"
+date: 2019-12-20
+categories:
+  - Python
+  - Machine Learning
+  - Object Oriented Programming
+  - Bayesian Optimizaiton
+---
 
-An illustration to create ML class for different hyper-parameter tuning techniques
+*An illustration to create ML class for different hyper-parameter tuning techniques*
 ----------------------------------------------------------------------------------
 
-[![Kshitij Mamgain](https://miro.medium.com/fit/c/96/96/2*MnbMNInJ86IVgP-DD_CZ2g.jpeg)](https://medium.com/@kshitij.mamgain?source=post_page-----2c6922f5077f----------------------)[Kshitij Mamgain](https://medium.com/@kshitij.mamgain?source=post_page-----2c6922f5077f----------------------)Follow[Apr 21](https://medium.com/datadriveninvestor/object-oriented-programming-to-tune-ml-model-2c6922f5077f?source=post_page-----2c6922f5077f----------------------) · 9 min read
-
-<img class="s t u ho ai" src="https://miro.medium.com/max/2000/1\*j8-cozpbICG78MxviylRhQ.jpeg" width="1000" height="699" srcSet="https://miro.medium.com/max/552/1\*j8-cozpbICG78MxviylRhQ.jpeg 276w, https://miro.medium.com/max/1104/1\*j8-cozpbICG78MxviylRhQ.jpeg 552w, https://miro.medium.com/max/1280/1\*j8-cozpbICG78MxviylRhQ.jpeg 640w, https://miro.medium.com/max/1400/1\*j8-cozpbICG78MxviylRhQ.jpeg 700w" sizes="700px" role="presentation"/>
-
-Photo on VectorStock.com/24059883
+![]("https://miro.medium.com/max/700/1*j8-cozpbICG78MxviylRhQ.jpeg")
+[(Source)](VectorStock.com/24059883)*
 
 This article is for the new and aspirant data scientists to demonstrate the use of object oriented programming in Python to tune the machine learning (ML) models . So, if you’re new and growing in love with this amazing field you would have realized certain milestones in your learning curve, first you would be brushing your statistics skills and then learn about visualization and data transformation with tools like numpy and pandas and then finally would create and test your machine learning models. The next progression is to familiarize yourself with object-oriented programming (OOP) and starting to write the Python scripts. By, the end of this article you would have some understanding parameter tuning and creating the class object for ML models. The article is divided into 2 parts so suit yourself to jump to the section you feel is appropriate for you (checkout the [notebook](https://github.com/kshitijmamgain/Mlclass/blob/master/ML_class_demonstration.ipynb)).
 
@@ -19,17 +24,6 @@ Introduction to Bayesian Optimization
 -------------------------------------
 
 Not too long ago selection of hyper-parameters was termed as the ‘art’, some would say it requires skills to tune while others would say it’s based on intuition. Additionally, the more complex the ML algorithm gets the more are the hyper-parameters to tune. In such scenarios one option is to tune the model with every possible tuning combination aka grid search also known as brute force. Or another approach is to test the hyper-parameters with trial and error and picking parameter sets at random. The latter approach is preferred than the former as there is better chance of identifying the well performing parameters. Both random search and grid search are available in sklearn library with cross validation.
-
-[
-
-Cognitive computing - a skill-set widely considered to be the most vital manifestation of…
-------------------------------------------------------------------------------------------
-
-### As its users, we have grown to take technology for granted. Hardly anything these days is as commonplace and…
-
-#### www.datadriveninvestor.com
-
-](https://www.datadriveninvestor.com/2020/02/19/cognitive-computing-a-skill-set-widely-considered-to-be-the-most-vital-manifestation-of-artificial-intelligence/)
 
 Fortunately, there are better ways to tune the hyper-parameters which are more effective than a random search like Bayesian Optimization, which arrives on the best hyper-parameter values by estimating and updating the probability distribution that describes potential values of the objective function. In simple word this means when the algorithm finds a good result for particular value of a hyper-parameter it intensifies the search around that value. We would discuss two python libraries [**Hyperopt**](http://hyperopt.github.io/hyperopt/) and [**Optuna**](https://optuna.readthedocs.io/en/stable/index.html#) which use such approach.
 
@@ -127,7 +121,7 @@ ML Object Classes for hyper-parameter tuning
 
 The focus in this section would be to demonstrate how to create a classifier class. There are plenty of resources available on OOP programming but demonstration of complete classes is limited. We would use the above example to create a class. In building a class it is important to visualize the structure of your class, here we would create a simple flow as shown in the figure below.
 
-<img class="s t u ho ai" src="https://miro.medium.com/max/3776/1\*o3ofbSy8Is9vQvdjmhOMvg.png" width="1888" height="471" srcSet="https://miro.medium.com/max/552/1\*o3ofbSy8Is9vQvdjmhOMvg.png 276w, https://miro.medium.com/max/1104/1\*o3ofbSy8Is9vQvdjmhOMvg.png 552w, https://miro.medium.com/max/1280/1\*o3ofbSy8Is9vQvdjmhOMvg.png 640w, https://miro.medium.com/max/1456/1\*o3ofbSy8Is9vQvdjmhOMvg.png 728w, https://miro.medium.com/max/1632/1\*o3ofbSy8Is9vQvdjmhOMvg.png 816w, https://miro.medium.com/max/1808/1\*o3ofbSy8Is9vQvdjmhOMvg.png 904w, https://miro.medium.com/max/1984/1\*o3ofbSy8Is9vQvdjmhOMvg.png 992w, https://miro.medium.com/max/2000/1\*o3ofbSy8Is9vQvdjmhOMvg.png 1000w" sizes="1000px" role="presentation"/>
+![](https://miro.medium.com/max/1000/1*o3ofbSy8Is9vQvdjmhOMvg.png)
 
 Structure of defined ML class
 

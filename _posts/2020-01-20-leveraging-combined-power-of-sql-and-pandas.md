@@ -1,13 +1,20 @@
-Leveraging combined power of SQL and Pandas
+---
+published: true
+title: "Leveraging combined power of SQL and Pandas"
+date: 2019-01-20
+categories:
+  - Pandas
+  - SQL
+  - Python
+---
 ===========================================
 
-[![Kshitij Mamgain](https://miro.medium.com/fit/c/96/96/2*MnbMNInJ86IVgP-DD_CZ2g.jpeg)](https://medium.com/@kshitij.mamgain?source=post_page-----4772b3d8b4f5----------------------)[Kshitij Mamgain](https://medium.com/@kshitij.mamgain?source=post_page-----4772b3d8b4f5----------------------)Follow[Jan 20](https://medium.com/@kshitij.mamgain/leveraging-combined-power-of-sql-and-pandas-4772b3d8b4f5?source=post_page-----4772b3d8b4f5----------------------) · 4 min read
 
-An illustration of using SQLite and Pandas to extract information from data
+*An illustration of using SQLite and Pandas to extract information from data*
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1710/1\*LZ4\_i8qifjfM4UsgjslBQw.png" width="855" height="482" srcSet="https://miro.medium.com/max/552/1\*LZ4\_i8qifjfM4UsgjslBQw.png 276w, https://miro.medium.com/max/1104/1\*LZ4\_i8qifjfM4UsgjslBQw.png 552w, https://miro.medium.com/max/1280/1\*LZ4\_i8qifjfM4UsgjslBQw.png 640w, https://miro.medium.com/max/1400/1\*LZ4\_i8qifjfM4UsgjslBQw.png 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/1710/1\*LZ4\_i8qifjfM4UsgjslBQw.png)
 
-Complementing pandas with sqlite3 would extend more tools for data wrangling
+*Complementing pandas with sqlite3 would extend more tools for data wrangling*
 
 Introduction
 ============
@@ -45,7 +52,7 @@ provinces\_df.to\_sql('provinces\_df', new\_con)\# viewing the tables present in
 pd.read\_sql\_query('select \* from sqlite\_master', new\_con)
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1470/1\*0QSqvOYBet\_5dOt4gUK3Fw.png" width="735" height="214" srcSet="https://miro.medium.com/max/552/1\*0QSqvOYBet\_5dOt4gUK3Fw.png 276w, https://miro.medium.com/max/1104/1\*0QSqvOYBet\_5dOt4gUK3Fw.png 552w, https://miro.medium.com/max/1280/1\*0QSqvOYBet\_5dOt4gUK3Fw.png 640w, https://miro.medium.com/max/1400/1\*0QSqvOYBet\_5dOt4gUK3Fw.png 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/1470/1*0QSqvOYBet_5dOt4gUK3Fw.png)
 
 Tables created inside the database
 
@@ -77,7 +84,7 @@ cur.execute("SELECT name FROM sqlite\_master WHERE type='table';")
 cur.fetchall()
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1608/1\*kT21CoSWTi1cLXi140zhYQ.png" width="804" height="228" srcSet="https://miro.medium.com/max/552/1\*kT21CoSWTi1cLXi140zhYQ.png 276w, https://miro.medium.com/max/1104/1\*kT21CoSWTi1cLXi140zhYQ.png 552w, https://miro.medium.com/max/1280/1\*kT21CoSWTi1cLXi140zhYQ.png 640w, https://miro.medium.com/max/1400/1\*kT21CoSWTi1cLXi140zhYQ.png 700w" sizes="700px" role="presentation"/>
+![]("https://miro.medium.com/max/1608/1*kT21CoSWTi1cLXi140zhYQ.png)
 
 Output for above codes provides list of all the tables
 
@@ -92,7 +99,7 @@ for** table **in** tbl\_list:
     print('**{0}**\_df'.format(table))
 ```
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1608/1\*VmUbSAZKMYXbzCU\_aVuIWg.png" width="804" height="241" srcSet="https://miro.medium.com/max/552/1\*VmUbSAZKMYXbzCU\_aVuIWg.png 276w, https://miro.medium.com/max/1104/1\*VmUbSAZKMYXbzCU\_aVuIWg.png 552w, https://miro.medium.com/max/1280/1\*VmUbSAZKMYXbzCU\_aVuIWg.png 640w, https://miro.medium.com/max/1400/1\*VmUbSAZKMYXbzCU\_aVuIWg.png 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/1608/1*VmUbSAZKMYXbzCU_aVuIWg.png)
 
 Above code would result in creation of new data frame in your environment
 
@@ -106,7 +113,7 @@ There was a challenge thrown to me by my colleague and you are encouraged to sol
 
 A csv file ‘regionlist’ ([here](https://github.com/kshitijmamgain/Lantern-Projects/blob/master/Dataset/regionlist.csv)) has multiple levels of hierarchy in one single column. Our goal is to see when a region id is entered we know — region\_name, province\_name, country\_name. _But,_ with out any loop.
 
-<img class="s t u gv ai" src="https://miro.medium.com/max/1406/1\*sQBiJkBl6pPjHIcwPwhA-Q.png" width="703" height="421" srcSet="https://miro.medium.com/max/552/1\*sQBiJkBl6pPjHIcwPwhA-Q.png 276w, https://miro.medium.com/max/1104/1\*sQBiJkBl6pPjHIcwPwhA-Q.png 552w, https://miro.medium.com/max/1280/1\*sQBiJkBl6pPjHIcwPwhA-Q.png 640w, https://miro.medium.com/max/1400/1\*sQBiJkBl6pPjHIcwPwhA-Q.png 700w" sizes="700px" role="presentation"/>
+![](https://miro.medium.com/max/1406/1*sQBiJkBl6pPjHIcwPwhA-Q.png)
 
 Challenge : Snap shot of data
 
