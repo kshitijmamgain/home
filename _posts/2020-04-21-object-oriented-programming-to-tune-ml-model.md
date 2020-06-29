@@ -8,12 +8,11 @@ categories:
   - Object Oriented Programming
   - Bayesian Optimizaiton
 ---
+![]("https://miro.medium.com/max/700/1*j8-cozpbICG78MxviylRhQ.jpeg")
+[(Source)](VectorStock.com/24059883)*
 
 *An illustration to create ML class for different hyper-parameter tuning techniques*
 ----------------------------------------------------------------------------------
-
-![]("https://miro.medium.com/max/700/1*j8-cozpbICG78MxviylRhQ.jpeg")
-[(Source)](VectorStock.com/24059883)*
 
 This article is for the new and aspirant data scientists to demonstrate the use of object oriented programming in Python to tune the machine learning (ML) models . So, if you’re new and growing in love with this amazing field you would have realized certain milestones in your learning curve, first you would be brushing your statistics skills and then learn about visualization and data transformation with tools like numpy and pandas and then finally would create and test your machine learning models. The next progression is to familiarize yourself with object-oriented programming (OOP) and starting to write the Python scripts. By, the end of this article you would have some understanding parameter tuning and creating the class object for ML models. The article is divided into 2 parts so suit yourself to jump to the section you feel is appropriate for you (checkout the [notebook](https://github.com/kshitijmamgain/Mlclass/blob/master/ML_class_demonstration.ipynb)).
 

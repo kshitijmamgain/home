@@ -1,7 +1,7 @@
 ---
 published: true
 title: "Leveraging combined power of SQL and Pandas"
-date: 2019-01-20
+date: 2020-01-20
 categories:
   - Pandas
   - SQL
