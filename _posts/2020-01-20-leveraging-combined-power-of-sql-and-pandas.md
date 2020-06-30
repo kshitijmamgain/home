@@ -12,14 +12,13 @@ categories:
 
 *Complementing pandas with sqlite3 would extend more tools for data wrangling*
 
-Introduction
-============
-
 While many still use SQL queries in their work to extract key information. We know that pandas is a powerful library for data wrangling and data aggregation in python. Thankfully Python programming allows one to take advantage of SQL too using the SQLite package. The ‘sqlite3’ module is included in the python library since Python 2.5, importing the package would let one fetch the data using queries.
+
+<!--more-->
 
 One can create database in Python using sqlite **Connection** object.
 
-```
+```python
 **import** **sqlite3  
 **\# Create a database orpita and a connection new\_con  
 new\_con = sqlite3.connect(r"orpita\_.db")
@@ -36,7 +35,7 @@ Working with Pandas and SQL
 
 The pandas dataframes can be stored as tables in the newly created database. And the tables can be read from Pandas using read\_sql\_query
 
-```
+```python
 **import** **pandas** **as** **pd  
 **\# loading 3 csv files  
 regionlist\_df = pd.read\_csv(r'regionlist.csv')  
@@ -54,7 +53,7 @@ Tables created inside the database
 
 Once we have a connection and data tables we could create a **Cursor** object to execute the structured queries.
 
-```
+```python
 \# create a cursor object which connects with Connection **'**new\_con'  
 cur = new\_con.cursor()\# to execute the SQL query, provide top 5 rows from a table   
 cur.execute("SELECT  \* FROM regionlist\_df LIMIT 5")\# to fetch the query result  
@@ -72,7 +71,7 @@ cur.fetchall()'''
 
 Conversely, the data tables can be extracted from database and converted into pandas dataframes. In the example below a [pokemon sqlite](https://github.com/decentralion/PokemonSQLTutorial/blob/master/pokedex.sqlite) is used.
 
-```
+```python
 #Create a new conncetion con  
 con = sqlite3.connect("./pokedex.sqlite")  
 cur=con.cursor()_\# Let us see the list of tables in the DB_  
@@ -86,7 +85,7 @@ Output for above codes provides list of all the tables
 
 The output in for the SQL queries comes in list format. For each data set table and index are stored separately in database. So, putting a condition would allow to select the desired table which are to be used as pandas dataframe.
 
-```
+```python
 \# Create a dataframe with all the tables inside connection 'con'  
 df = pd.read\_sql\_query('select \* from sqlite\_master', con)  
 tbl\_list = list(df\[df\['type'\] == 'table'\]\['name'\])\# create dataframes in a loop**  

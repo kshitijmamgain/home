@@ -13,7 +13,7 @@ categories:
 
 *An illustration to create ML class for different hyper-parameter tuning techniques*
 
-This article is for the new and aspirant data scientists to demonstrate the use of object oriented programming in Python to tune the machine learning (ML) models . So, if you’re new and growing in love with this amazing field you would have realized certain milestones in your learning curve, first you would be brushing your statistics skills and then learn about visualization and data transformation with tools like numpy and pandas and then finally would create and test your machine learning models. The next progression is to familiarize yourself with object-oriented programming (OOP) and starting to write the Python scripts. By, the end of this article you would have some understanding parameter tuning and creating the class object for ML models. The article is divided into 2 parts so suit yourself to jump to the section you feel is appropriate for you (checkout the [notebook](https://github.com/kshitijmamgain/Mlclass/blob/master/ML_class_demonstration.ipynb)).
+This article is for the new and aspirant data scientists to demonstrate the use of object oriented programming in Python to tune the machine learning (ML) models . <!--more-->So, if you’re new and growing in love with this amazing field you would have realized certain milestones in your learning curve, first you would be brushing your statistics skills and then learn about visualization and data transformation with tools like numpy and pandas and then finally would create and test your machine learning models. The next progression is to familiarize yourself with object-oriented programming (OOP) and starting to write the Python scripts. By, the end of this article you would have some understanding parameter tuning and creating the class object for ML models. The article is divided into 2 parts so suit yourself to jump to the section you feel is appropriate for you (checkout the [notebook](https://github.com/kshitijmamgain/Mlclass/blob/master/ML_class_demonstration.ipynb)).
 
 1.  Introduction to Bayesian Optimization
 2.  ML Object Classes for hyper-parameter tuning
@@ -27,7 +27,7 @@ Fortunately, there are better ways to tune the hyper-parameters which are more e
 
 Hyperopt has excellent [tutorial](https://github.com/hyperopt/hyperopt/wiki/FMin), we would demonstrate its use on a LightGBM model. The gradient boosted tree algorithms are very popular for building supervised learning models and LightGBM is a great type in it. We would use breast cancer dataset in sklearn
 
-```
+```python
 \# importing the essential libraries  
 import numpy as np  
 import pandas as pd  
@@ -42,7 +42,7 @@ y = dataset.targetX\_train, X\_test, y\_train, y\_test = train\_test\_split(X, y
 
 Four methods have been called from Hypeopt library — _fmin, hp, tpe and STATUS\_OK._ The first, **fmin** is the method that minimizes the objective function loss. If we want our model to perform with higher accuracy then what we would like to minimize is (1-accuracy) in same way if we want to minimize the F1score, the loss that we would minimize is (1-F1score) as shown below:
 
-```
+```python
 #lgb model takes param as dict  
 param = {'objective': 'binary', 'learning\_rate': 0.5,'reg\_alpha': 0.5, 'reg\_lambda': 0.5}  
 model = lgb.train(params, lgb.Dataset(X\_train, label = y\_train))  
@@ -58,7 +58,7 @@ loss = 1-f1sc
 
 In the codes above, the hyperopt fmin method could be used to optimize the loss i.e. help to improve the F1score. To create such function we would want it to take different hyper-parameters as input and test improvement in F1score. Therefore, we could do the following:
 
-```
+```python
 def objective(params):\# an objective function  
   h\_model = lgb.train(params, lgb.Dataset(X\_train, label = y\_train))  
   pred=h\_model.predict(X\_test)  
@@ -70,7 +70,7 @@ def objective(params):\# an objective function
 
 This objective function would be optimized on whatever is defined as loss. Next we need a parameter space from where the value of hyper-parameters would be selected. Such search space is defined by **hp:**
 
-```
+```python
 \# quniform: quantile uniform distribution (discrete);   
 space = {  
          ‘lambda\_l1’: hp.uniform(‘lambda\_l1’, 0.0, 1.0),  
@@ -82,7 +82,7 @@ trials = Trials()
 
 The **tpe** method has algorithm to search from the space defined above and **Trials** method creates a database to to record the trials. And finally **STATUS\_OK** which is mandatory to be returned from objective function to store the success of the run. The fmin method would store results - best parameters chosen from hyper-parameter space.
 
-```
+```python
 best = fmin(fn=objective, space=space, algo=tpe.suggest, max\_evals=1000)  
 best  
 output> {'lambda\_l1': 0.0021950856879321273,  'lambda\_l2': 0.004537789645112988,  'learning\_rate': 0.10215913897624063,  'num\_leaves': 176.0}
@@ -92,7 +92,7 @@ Notice that when fmin method is called we also have to specify the number of max
 
 Optuna library too optimizes the hyper-parameters with Bayesian Optimization. But there is ease in coding over Hyperopt, firstly, we define objective function and hyper-parameter space inside a single function. Secondly, unlike Hyperopt which only ‘minimizes’ the objective function in Optuna we could define if we wish to maximize or minimize the objective.
 
-```
+```python
 import optunadef optuna\_obj(trial):  
   '''Defining the parameters space inside the function for optuna optimization''' params = {‘num\_leaves’: trial.suggest\_int(‘num\_leaves’, 16, 196, 4),  
   ‘lambda\_l1’: trial.suggest\_loguniform(‘lambda\_l1’, 1e-8, 10.0),  
@@ -107,7 +107,7 @@ study.optimize(optuna\_obj, n\_trials=2000)
 
 Notice that we have used ‘minimize’ as direction since we want an output similar to Hyperopt. We could have also returned f1-score with direction as ‘maximum’ in Optuna. The optimized hyper-parameters are stored in best\_params attribute in study.
 
-```
+```python
 study.best\_params  
 \>> {'lambda\_l1': 9.81991399439663e-07,  'lambda\_l2': 4.23211064923651,  'learning\_rate': 0.1646975912311242,  'num\_leaves': 64}
 ```
@@ -125,7 +125,7 @@ Structure of defined ML class
 
 The overall structure of the above class would be something like:
 
-```
+```python
 class Mlclass():  
   def \_\_init\_\_(self,...):  
     ...  
@@ -143,7 +143,7 @@ class Mlclass():
 
 This basic structure would give us a good understanding of different types of class methods, there are some methods like tuning, train and evaluate which would be called by the user while others like hyperopt and optuna would be used within the class without requiring user to call them.
 
-```
+```python
 class MLclass():  
   '''Parameter Tuning Class tunes the LightGBM model with different   optimization techniques - Hyperopt, Optuna.''' def \_\_init\_\_(self, x\_train, y\_train):  
     '''Initializes the Parameter tuning class and also initializes   LightGBM dataset object  
@@ -156,14 +156,14 @@ class MLclass():
 
 The ML class method is first initialized with training dataset and the target. A class is defined by starting with _class._ The functions defined inside the class are known as _methods_. Our first method is _\_\_init\_\__ which is used to initialize the class. Here we want our class to be initialized with data-set and the target so we have given the inputs parameters as ‘x\_train’ and ‘y\_train’. The _self_ in the method is used to associate the function with an instance. Using ‘self. ‘ as prefix to the variables also makes the class variables specific to that instance. Calling this class is as easy as:
 
-```
+```python
 #defining a unique class object  
 obj = MLclass(X\_train, y\_train)
 ```
 
 Once the class method is initialized we would add the method for Hypeorpt optimization. We would want user to input optimization type as Hypeorpt and then tune the model.
 
-```
+```python
 def tuning(self, optim\_type):  
   '''Method takes the optimization type and tunes the model'''  
   #call the optim\_type: Hyperopt or Optuna  
@@ -193,7 +193,7 @@ obj.tuning('hyperopt\_method')
 
 When the tuning method is called as in the codes above, Hyperopt optimization would be performed. Let’s define a similar method for Optuna
 
-```
+```python
 def optuna\_method(self):  
   study = optuna.create\_study(direction=’minimize’)  
   study.optimize(optuna\_obj, n\_trials=2000)  
@@ -212,7 +212,7 @@ obj.tuning('optuna\_method')
 
 To use the best parameters for evaluation we defined another variable self._params_ which would be defined for that instance and could be accessed by a yet to be defined train method.
 
-```
+```python
 def train(self):  
   """This function evaluates the model on best parameters"""  
 print("Model will be trained on the following parameters: \\n{}".format(self.params)) #train the model with best parameters  
@@ -223,7 +223,7 @@ print("Model will be trained on the following parameters: \\n{}".format(self.par
 
 Once the model is trained we could evaluate that by giving test data-set and test target as the parameters.
 
-```
+```python
 def evaluate(self, x\_test, y\_test):  
   # predict the values from x\_test  
   pred = self.gbm.predict(x\_test)  
