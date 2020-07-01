@@ -3,27 +3,13 @@ layout: page
 title: About
 permalink: /about/
 ---
+ 
+![](https://raw.githubusercontent.com/kshitijmamgain/kshitijmamgain.github.io/master/images/journey.png)
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a Jekyll theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for [my blog](https://www.amitmerchant.com).
+I have more than 4 years of experience in Data Analysis and Science. I have solid skills and experience in data handling, ETL using SQL; building and implementing machine learning models in Python, understanding of ML algorithms and deep neural networks. I have worked in projects and experiments and developing business recommendations.
 
-This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
+At present I am scrum master for the agile team working on experiments on convergence and efficiency of different gradient boosted trees – XGBoost, Catboost and LightGBM on varied datasets on virtual machines. I have solid knowledge of cloud technologies – Google Cloud Platform and Azure and have hands on experience in utilizing SQL and spark for ETL operations.
 
-## Features
+In my past roles I have worked with Tata Trusts in India and I bring over 3 years of experience working towards analysis of mass data quantities for the public welfare sector. Over the years I have acquired knowledge and experience to understand the complexities in gaining insights by interpreting data from multiple sources. In my career since 2014, I have held multiple positions with Tata Trusts to provide business recommendations for community support programs. I have handled identification of patterns and trends from data for the projects by building meaningful dashboards and performance reports. I used to work extensively with SQL and SAS for data manipulation. My role in Nokia Siemens was on building technical solutions for telecom sector as a part of pre-sales team.
 
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized base theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies comes in-built
-- Markdown blogging
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Google Analytics integration
-- Fuzzy search across blog posts
-- Pagination of posts works out-of-the-box.
-- Categorize posts out-of-the box
-- RSS Feed
-- In-built sitemap
-
-Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how to get started.
+I have great liking to documentation and creating articles on data science and modelling which have also been published in popular data science portals.

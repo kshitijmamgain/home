@@ -34,23 +34,23 @@ One such interest rate which is important for financial institution is LIBOR rat
 Let us start by getting the data from Federal Reserve Bank of St. Louis ([here](https://fred.stlouisfed.org/categories/33003)). I have used LIBOR rates — 1 month, 3month, 6 month, 12 month of term maturities or _tenors_, a more popular name. A quick R code could load the data as ‘xts file’
 
 ```
-\# All csv files in one folder  
-list\_files <- list.files( pattern = “csv”, full.names = TRUE)load\_data <- function(filename) {  
+# All csv files in one folder  
+list_files <- list.files( pattern = “csv”, full.names = TRUE)load_data <- function(filename) {  
  data = read.csv(filename, as.is = T)  
- data\_xts = xts(as.numeric(data\[,2\]),   
- as.Date(data\[,1\], format=’%Y-%m-%d’))  
- return(data\_xts)  
-}\# Function to create dataframe in a loop  
-for( i in 1:length(list\_files))  {  
-  x <- strsplit(list\_files\[i\],"/")  
-  x <- strsplit(x\[\[1\]\]\[2\],"M")  
-  print(x\[\[1\]\]\[1\])  
-  nam <- (paste(x\[\[1\]\]\[1\],"m", sep = ""))  
-  assign(nam,load\_data(list\_files\[i\]))  
-}\# create a common xts data frame  
-liborusd <- merge(USD\_1m, USD\_3m, all=FALSE)  
-liborusd <- merge(liborusd, USD\_6m, all = F)  
-liborusd <- merge(liborusd, USD\_12m, all = F)  
+ data_xts = xts(as.numeric(data\[,2\]),   
+ as.Date(data[,1], format=’%Y-%m-%d’))  
+ return(data_xts)  
+}# Function to create dataframe in a loop  
+for( i in 1:length(list_files))  {  
+  x <- strsplit(list_files[i],"/")  
+  x <- strsplit(x[[1]][2],"M")  
+  print(x[[1]][1])  
+  nam <- (paste(x[[1]][1],"m", sep = ""))  
+  assign(nam,load_data(list_files[i]))  
+}# create a common xts data frame  
+liborusd <- merge(USD_1m, USD_3m, all=FALSE)  
+liborusd <- merge(liborusd, USD_6m, all = F)  
+liborusd <- merge(liborusd, USD_12m, all = F)  
 liborusd <- na.omit(liborusd)tsRainbow <- rainbow(ncol(liborusd))  
 plot(x=as.zoo(liborusd),col=tsRainbow, main="LIBOR Rates for USD 2014-12 to 2019-12",   
      ylab="Rates", xlab="Time", plot.type="single", yaxt="n")
