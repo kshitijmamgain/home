@@ -12,4 +12,4 @@ package.json
 .jekyll-cache
 package-lock.json
 node_modules/
-.docx
+*.docx
