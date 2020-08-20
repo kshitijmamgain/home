@@ -1,7 +1,7 @@
 ---
 published: true
 title: "Designing and Deploying a Web App using Python"
-date: 2020-01-20
+date: 2020-08-20
 categories:
   - Python
   - Pandas
@@ -9,6 +9,7 @@ categories:
   - Heroku
 ---
 ![](https://miro.medium.com/max/1710/1\*LZ4\_i8qifjfM4UsgjslBQw.png)
+
 *A step by step guide on how to make cool dash boards using python and dask module*
 
 __Checkout the app [dash-health-app.herokuapp](https://dash-health-app.herokuapp.com/) and the [Github Repo](https://github.com/kshitijmamgain/Health-Analysis)__
