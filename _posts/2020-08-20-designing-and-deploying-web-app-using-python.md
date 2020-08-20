@@ -19,8 +19,6 @@ __Checkout the app [dash-health-app.herokuapp](https://dash-health-app.herokuapp
 I wanted to analyze user data collected from Samsung's Health App and provide interactive plots that allow for data exploration and figures that summarize relevant trends. Any of the modern health app starts by giving insight on the daily activity and then aggreagtes information to give more insights on the patterns which emerge. this is know as **Trends Analaysis**. It is an important tool not just for end consumer but also in businesses as it helps to assess consumer behavior and often paves way for new solution by drawing insights from the available data.  
 I had bunch of messy raw files (and yes all of it were ethically sourced) and I decided to do a small project on visualization and web app creation. The analysis was done using the following raw files on **[sleep, steps, exercise, heart rate etc](https://raw.githubusercontent.com/kshitijmamgain/Health-Analysis/master/datasets)** which are available on my github.
 
-<!--more-->
-
 Methodology
 ==================
 
