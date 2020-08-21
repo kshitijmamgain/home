@@ -8,7 +8,7 @@ categories:
   - Dash
   - Heroku
 ---
-![](https://miro.medium.com/max/1710/1\*LZ4\_i8qifjfM4UsgjslBQw.png)
+![Alternate text](http://kshitij-mamgain.github.io/images/20-08-2019-dash-board.png)
 
 *A step by step guide on how to make cool dash boards using python and dask module*
 
@@ -67,14 +67,14 @@ das_app/
 **Step I. Coding Methods for creating Graphs on Plotly**
 
 After cleaning the data, I started with creating simple graph from plotyly using plotly express module.
-```
+```python
 import pandas as pd
 import plotly.express as px
 sleep = pd.read_csv('sleep.csv')
 fig = px.bar(x=list(sleep.groupby(['hours']).mean().unstack()['duration'].index), y=list(df.groupby(['hours']).mean().unstack()['duration'].values))
 ```
 Which is a simple bar graph with x-axis as hour of day and y axis as average duration of sleep. Since this would show me what is the usual wake up time and how much does this individual actually sleep. I would next create a function which could take the input for dataframe, x-axis column and y-axis column. Something like below:
-```
+```python
 def bar_plot(attribute):
   if attribute == 'sleep':
     df = sleep_df
@@ -96,7 +96,7 @@ Similarly, I created different graphs by defining them as functions. And i saved
 __Modular Coding:__ When I started, I had much trouble in debugging the codes. The dash library has Python abstraction for HTML and I would inadverently get much lost in '_html.Div_' one bracket here and there and I had to sepnd time looking for missing piece!
 To declutter the codes a best practice is to modularize the pieces. A very basic dash app is just presenting a markdown text.
 
-```
+```python
 # import dash libraries
 import dash
 import dash_html_components as html
@@ -125,12 +125,13 @@ When the above python file runs on terminal it would create a local server to di
 Thus in end I had one directory with lay outs for each tab and one directory which defined each graph. And my main file - app.py had to just import the files from these created libraries.
 
 **III. Deploying as a Web App on Heroku**
+
 Final part included deploying the app on Heroku. Which is very simple if one is hands on with git.
 Heroku allows us to create a free account to hose web apps. Since the web app was ready I created a new directory and copied all the files to it. Next I created a virtual environment using virtualenv module. Next I creates requirements.txt which had all the modules which were called in the dash app. A file that is needed for deploying an app on Heroku is Procfile. Which has basic contents:
 ```
 web: gunicorn healthapp:server --log-file=-
 ```
-I found a video by [_charming data_](https://www.youtube.com/watch?v=b-M2KQ6_bM4&t=1165s) very weel structured and simple.
+I found a video by [_charming data_](https://www.youtube.com/watch?v=b-M2KQ6_bM4&t=1165s) very well structured and simple.
 
 So, pushing and pulling a file from Heroku is similar to Github where the remote is defined as *Heroku* instead of *Origin*.
 
