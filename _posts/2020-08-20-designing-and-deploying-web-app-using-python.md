@@ -8,7 +8,7 @@ categories:
   - Dash
   - Heroku
 ---
-![Alternate text](http://kshitij-mamgain.github.io/images/20-08-2019-dash-board.png)
+![Alternate text](https://raw.githubusercontent.com/kshitijmamgain/kshitijmamgain.github.io/master/images/20-08-2019-dash-board.png)
 
 *A step by step guide on how to make cool dash boards using python and dask module*
 
